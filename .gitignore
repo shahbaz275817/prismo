@@ -1,0 +1,26 @@
+### Go ###
+# Compiled Object files, Static and Dynamic libs (Shared Objects)
+*.o
+*.a
+*.so
+
+# IDE Ignores
+/.idea
+*.iml
+
+application.yml
+worker.yml
+*.out
+# Project Ignores
+dev/
+tmp/
+temp/
+out/
+logs/
+build/
+vendor/
+.vendor-new/
+.DS_Store
+scripts/manual_tools
+.testCoverage.txt
+.testCoverage.html
