@@ -20,8 +20,6 @@ all: check-quality clean test
 copy-config:
 	@echo "Copying configs/application.yml.sample to application.yml ..."
 	@cp configs/application.yml.sample application.yml
-	@echo "Copying configs/worker.yml.sample to worker.yml ..."
-	@cp configs/worker.yml.sample worker.yml
 	@echo "Done."
 
 setup:
