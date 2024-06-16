@@ -21,24 +21,10 @@ RUN make setup
 # Build the application
 RUN make build
 
-# Run migrations
-RUN make migrate
-
-# Use a minimal Debian-based image for the final stage
-FROM debian:bullseye-slim
-
-# Set the working directory inside the container
-WORKDIR /app
-
-# Copy the built application and configuration files from the builder stage
-COPY --from=builder /app/out/prismo /app/
-COPY --from=builder /app/application.yml /app/
-COPY --from=builder /app/worker.yml /app/
-
-# Install necessary runtime dependencies
-RUN apt-get update && apt-get install -y \
-    ca-certificates \
-    && apt-get clean
+## Run migrations
+#RUN make migrate
 
 # Specify the command to run your application
-CMD ["./prismo server"]
+#CMD ["make run"]
+
+CMD ["sh", "-c", "cd out/ && ./prismo server"]
